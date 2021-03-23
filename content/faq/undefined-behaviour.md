@@ -4,7 +4,7 @@ date: 2021-03-23T02:26:05Z
 slug: "ub"
 # weight: 1
 # aliases: ["/ub"]
-tags: ["none"]
+tags: ["c", "c++"]
 draft: false
 disableShare: false
 disableHLJS: false

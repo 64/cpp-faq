@@ -3,7 +3,7 @@ title: "How do I enable compiler warnings?"
 date: 2021-03-23T01:56:40Z
 # weight: 1
 # aliases: ["/first"]
-tags: ["c", "c++"]
+tags: ["c", "c++", "dev-env"]
 draft: false
 disableShare: false
 disableHLJS: false
