@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://64.github.io/cpp-faq/sitemap.xml

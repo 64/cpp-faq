@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>c on C &amp; C&#43;&#43; FAQ</title>
+    <link>https://64.github.io/cpp-faq/tags/c/</link>
+    <description>Recent content in c on C &amp; C&#43;&#43; FAQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 23 Mar 2021 01:56:40 +0000</lastBuildDate><atom:link href="https://64.github.io/cpp-faq/tags/c/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How do I enable compiler warnings?</title>
+      <link>https://64.github.io/cpp-faq/how-do-i-enable-compiler-warnings/</link>
+      <pubDate>Tue, 23 Mar 2021 01:56:40 +0000</pubDate>
+      
+      <guid>https://64.github.io/cpp-faq/how-do-i-enable-compiler-warnings/</guid>
+      <description>For gcc and clang users Add -Wall -Wextra to your compilation flags.
+(Note that, contrary to what the name -Wall may imply, this does not enable all warnings, but it does enable most of the important ones.)
+For Visual Studio users Unlike gcc and clang, Visual Studio does enable some warnings by default. To set the warning level to something different, Consult Microsoft&amp;rsquo;s documentation here.</description>
+    </item>
+    
+  </channel>
+</rss>
