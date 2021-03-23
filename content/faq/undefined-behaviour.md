@@ -2,21 +2,14 @@
 title: "What is 'Undefined Behaviour'?"
 date: 2021-03-23T02:26:05Z
 slug: "ub"
-# weight: 1
-tags: ["c", "c++"]
+tags: ["C", "C++"]
 draft: false
 disableShare: false
 disableHLJS: false
 searchHidden: false
-# cover:
-#     image: "<image path/url>" # image path/url
-#     alt: "<alt text>" # alt text
-#     caption: "<text>" # display caption under cover
-#     relative: false # when using page bundles set this to true
-#     hidden: true # only hide on current single page
 ---
 
-Undefined Behaviour (also known as **UB**) occurs when you violate certain language rules. These rules include (but are not limited to): dereferencing a `nullptr`, signed integer overflow, accessing through a [dangling reference](https://en.cppreference.com/w/cpp/language/reference#Dangling_references), or accessing through an unaligned pointer.
+Undefined Behaviour (also known as **UB**) occurs when you violate certain language rules. These rules include (but are not limited to): dereferencing a null pointer, signed integer overflow, accessing through a [dangling reference](https://en.cppreference.com/w/cpp/language/reference#Dangling_references), or accessing through an unaligned pointer.
 
 **When undefined behaviour occurs, the C and C++ standards do not place any restrictions on what your program might do.** In other words, your program may crash, or continue execution, or call some seemingly unrelated piece of code, or print 42 and open [xkcd](https://xkcd.com/) in your web browser. In practice, you *may* be able to reason about how your compiler will respond to UB, and in some cases compilers will guarantee that certain operations are well-defined, but for maximum portability you should aim to keep your programs UB-free.
 
