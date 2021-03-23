@@ -1,0 +1,38 @@
+baseURL = "https://64.github.io/cpp-faq"
+title = "C & C++ FAQ"
+languageCode = "en-us"
+theme = "PaperMod"
+enableInlineShortcodes = true
+enableRobotsTXT = true
+
+[minify]
+disableXML = true
+minifyOutput = true
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
+[permalinks]
+faq = "/:slug" # So that we have /faq-entry-name instead of /faq/faq-entry-name
+
+[params]
+env = "production"
+title = "C & C++ FAQ"
+showtoc = false
+tocopen = false
+hidemeta = false
+comments = false
+socialIcons = [{ name = "github", url = "https://github.com/64/cpp-faq" }]
+
+[params.homeInfoParams]
+Title = "C & C++ FAQ"
+Content = "Frequently Asked Questions for the C and C++ programming languages."
+
+[params.fuseOpts]
+isCaseSensitive = false
+shouldSort = true
+location = 0.0
+distance = 1000.0
+threshold = 0.4
+minMatchCharLength = 0.0
+keys = ["title", "permalink", "summary", "content", "slug"]
