@@ -18,7 +18,7 @@ searchHidden: false
 
 
 ### For `gcc` and `clang` users
-Add `-Wall -Wextra` to your compilation flags.
+Add `-Wall -Wextra` to your compilation flags, enable `-Werror` so your compiler will treat warnings as errors, also you may need to enable `-pedantic` to disable gnu extensions
 
 (Note that, contrary to what the name `-Wall` may imply, this does not enable *all* warnings, but it does enable most of the important ones.)
 
