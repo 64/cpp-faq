@@ -13,7 +13,8 @@
       <pubDate>Tue, 23 Mar 2021 02:26:05 +0000</pubDate>
       
       <guid>https://64.github.io/cpp-faq/ub/</guid>
-      <description>TODO</description>
+      <description>Undefined Behaviour (also known as UB) occurs when you violate certain language rules. These rules include (but are not limited to): dereferencing a nullptr, signed integer overflow, accessing through a dangling reference, or accessing through an unaligned pointer.
+When undefined behaviour occurs, the C and C++ standards do not place any restrictions on what your program might do. In other words, your program may crash, or continue execution, or call some seemingly unrelated piece of code, or print 42 and open xkcd in your web browser.</description>
     </item>
     
     <item>
@@ -31,9 +32,9 @@
       <pubDate>Tue, 23 Mar 2021 01:56:40 +0000</pubDate>
       
       <guid>https://64.github.io/cpp-faq/how-do-i-enable-compiler-warnings/</guid>
-      <description>For gcc and clang users Add -Wall -Wextra to your compilation flags.
+      <description>For gcc and clang users Add -Wall -Wextra to your compilation flags, enable -Werror so your compiler will treat warnings as errors, also you may need to enable -pedantic to disable gnu extensions
 (Note that, contrary to what the name -Wall may imply, this does not enable all warnings, but it does enable most of the important ones.)
-For Visual Studio users Unlike gcc and clang, Visual Studio does enable some warnings by default. To set the warning level to something different, Consult Microsoft&amp;rsquo;s documentation here.</description>
+For Visual Studio users Unlike gcc and clang, Visual Studio does enable some warnings by default.</description>
     </item>
     
   </channel>
