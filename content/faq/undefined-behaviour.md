@@ -17,7 +17,8 @@ searchHidden: false
 #     hidden: true # only hide on current single page
 ---
 
-undefined behavior (UB) and ill-formed no diagonistic required (IFNDR) may confuse lot of newcomers to C++.
+
+undefined behavior (UB) may confuse lot of newcomers to C++.
 
 
 # What UB/IFNDR means: 
@@ -66,8 +67,4 @@ sometimes you may keep the UB in your code for the sake of performance, stdlib s
 
 ## avoiding UB:
 some UB needs simple code changes or checks like initialization and in the previously mentioned examples. However sometimes it's really hard to detect UB in your code specially if you aren't experienced enough, luckily there are some for purposes like these, like UBSan.
-
-
-## ill-formed no diagnostic required (IFNDR):
-IFNDR means that certain code has some errors but the compiler isn't supposed to diagnose it for the sake of performance
 
