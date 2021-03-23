@@ -1,6 +1,6 @@
 ---
 title: "Why using namespace std is considered bad practice?"
-date: 
+date: 23 / 03 / 2021
 tags: ["c++"]
 draft: false
 disableShare: false
