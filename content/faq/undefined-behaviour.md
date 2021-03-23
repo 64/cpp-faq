@@ -21,7 +21,7 @@ searchHidden: false
 undefined behavior (UB) may confuse lot of newcomers to C++.
 
 
-# What UB/IFNDR means: 
+# What UB means: 
 
 ## undefined behavior:
 UB basically means violating certain language rules, like overlow, dealing with stuff out of their lifetime, allocations with explicitly creating objects etc....
