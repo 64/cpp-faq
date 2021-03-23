@@ -3,7 +3,6 @@ title: "What is 'Undefined Behaviour'?"
 date: 2021-03-23T02:26:05Z
 slug: "ub"
 # weight: 1
-# aliases: ["/ub"]
 tags: ["c", "c++"]
 draft: false
 disableShare: false
@@ -17,54 +16,29 @@ searchHidden: false
 #     hidden: true # only hide on current single page
 ---
 
+Undefined Behaviour (also known as **UB**) occurs when you violate certain language rules. These rules include (but are not limited to): dereferencing a `nullptr`, signed integer overflow, accessing through a [dangling reference](https://en.cppreference.com/w/cpp/language/reference#Dangling_references), or accessing through an unaligned pointer.
 
-undefined behavior (UB) may confuse lot of newcomers to C++.
+**When undefined behaviour occurs, the C and C++ standards do not place any restrictions on what your program might do.** In other words, your program may crash, or continue execution, or call some seemingly unrelated piece of code, or print 42 and open [xkcd](https://xkcd.com/) in your web browser. In practice, you *may* be able to reason about how your compiler will respond to UB, and in some cases compilers will guarantee that certain operations are well-defined, but for maximum portability you should aim to keep your programs UB-free.
 
+## Examples of UB
 
-# What UB means: 
-
-## undefined behavior:
-UB basically means violating certain language rules, like overlow, dealing with stuff out of their lifetime, allocations with explicitly creating objects etc....
-And what makes UB hard to spot is that the compiler isn't supposed to warn/error about it, well may warn but for simple and common uses like access out of bounds, retuning a reference to function's local variable. most of these examples lead to [segmentation fault](https://en.wikipedia.org/wiki/Segmentation_fault) of course if you're lucky enough.
-## UB in action: 
-
-### unintialized scalar
 ```cpp
-int main() {
-    std::size_t x; // x is used without being initialized bad
-    std::cout << x;
-}
+int x;
+std::cout << x; // UB: x was used before being initialized
+
+int y = 0;
+std::cout << y; // OK
 ```
-### fix
 ```cpp
-int main() {
-    std::size_t x{};
-    std::cout << x; // x is value initialized, x is now 0
-}
+int arrayA[10];
+for(int x : arrayA)
+    std::cout << x << ' '; // UB: array elements are uninitialized
+
+int arrayB[10] = {};
+for(int x: arrayB)
+    std::cout << x << ' '; // OK
 ``` 
 
-## uninitialized array
-```cpp
-int main() {
-     int array[10];
-    for(int x: array)
-        std::cout << x << ' ';
-}
-``` 
-
-### fix
-```cpp
-int main() {
-    int array[10] = {}; // now `array` contains 10 value initialized ints
-    for(int x: array)
-        std::cout << x << ' ';
-}
-``` 
-
-## UB in code:
-sometimes you may keep the UB in your code for the sake of performance, stdlib sometimes does that for example [std::minmax](https://en.cppreference.com/w/cpp/algorithm/minmax).
-
-
-## avoiding UB:
-some UB needs simple code changes or checks like initialization and in the previously mentioned examples. However sometimes it's really hard to detect UB in your code specially if you aren't experienced enough, luckily there are some for purposes like these, like UBSan.
+## Avoiding UB
+Undefined behaviour can be difficult to diagnose. Always [compile with warnings enabled]({{< ref "faq/enable-warnings.md" >}}), but note that compilers can't detect all problems at compile time. Tools like [ASan](https://en.wikipedia.org/wiki/AddressSanitizer), [UBSAN](https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html) and [Valgrind](https://valgrind.org/docs/manual/quick-start.html#quick-start.mcrun) perform checks on your code at runtime and are good at catching invalid memory accesses, so are recommended for use during development.
 
