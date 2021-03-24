@@ -11,59 +11,41 @@ searchHidden: false
 Consider this code:
 
 ```cpp
-#include <vector>
 
-//My own implementation of vector
-template<typename T>
-class vector {
-    ...
-};
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+int swap = 0;
 
 int main() {
 
-    vector<int> vec;
-    vector<int> vector;
+	cout << swap << endl; // error: reference to "swap" is ambiguous
+
+	return 0;
 }
+
 ```
 
-You can distinguish your own implementation from the std one?
+There the compiler throws an error because swap is also a function inside the algorithm header. Compiler doesn't know what to do in this case.
 
-Consider also this code:
+So ```using namespace``` is considered a bad practice because makes your code less clear, and in the example leads to name collision. 
+If you really want to avoid writing  ```std::```, you can use a **using-declaration** inside a local scope:
 
 ```cpp
+
 #include <iostream>
-#include <string>
-
-namespace lib {
-
-    void print(std::string& text) {
-        std::cout << text << '\n';
-    }
-}
-
-namespace lib_2 {
-
-    void print(const char* text) {
-
-        std::string temp = text;
-
-        //Make something with this string
-
-        std::cout << temp << '\n';
-    }
-}
-
-using namespace lib;
-using namespace lib_2;
 
 int main() {
 
-    print("Hello");
+	using std::cout; // This will be valid only inside this function
+	
+	cout << "Hello" <<'\n';
+
 }
+
 ```
 
-Again, you know what function is called?
-
-In conclusion, ```using namespace``` is considered a bad practice because makes your code less clear, and in the second example leads to function name collision. This is really dangerous, because your code still compiles, but **it silently calls the wrong function**. 
-
-
+Generally, is always better to specify the namespace.
+If you want to know something more about this topic, I recommend watching this video: https://www.youtube.com/watch?v=4NYC-VU-svE
