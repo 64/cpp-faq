@@ -28,5 +28,16 @@ When undefined behaviour occurs, the C and C++ standards do not place any restri
 For Visual Studio users Unlike gcc and clang, Visual Studio does enable some warnings by default.</description>
     </item>
     
+    <item>
+      <title>Why using namespace std is considered bad practice?</title>
+      <link>https://64.github.io/cpp-faq/why-using-namespace-std-is-considered-bad-practice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://64.github.io/cpp-faq/why-using-namespace-std-is-considered-bad-practice/</guid>
+      <description>Consider this code:
+#include &amp;lt;iostream&amp;gt;#include &amp;lt;algorithm&amp;gt; using namespace std; int swap = 0; int main() { cout &amp;lt;&amp;lt; swap &amp;lt;&amp;lt; endl; // error: reference to &amp;#34;swap&amp;#34; is ambiguous  return 0; } There the compiler throws an error because swap is also a function inside the algorithm header. Compiler doesn&amp;rsquo;t know what to do in this case.
+So using namespace is considered a bad practice because makes your code less clear, and in the example leads to name collision.</description>
+    </item>
+    
   </channel>
 </rss>

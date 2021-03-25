@@ -35,5 +35,7 @@
     <loc>https://64.github.io/cpp-faq/categories/</loc>
   </url><url>
     <loc>https://64.github.io/cpp-faq/search/</loc>
+  </url><url>
+    <loc>https://64.github.io/cpp-faq/why-using-namespace-std-is-considered-bad-practice/</loc>
   </url>
 </urlset>
