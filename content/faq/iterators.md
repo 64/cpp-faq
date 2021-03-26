@@ -7,21 +7,15 @@ draft: false
 disableShare: false
 disableHLJS: false
 searchHidden: false
-# cover:
-#     image: "<image path/url>" # image path/url
-#     alt: "<alt text>" # alt text
-#     caption: "<text>" # display caption under cover
-#     relative: false # when using page bundles set this to true
-#     hidden: true # only hide on current single page
 ---
 
 
 
 # iterators:
-C++ iterators are a facility for traversing through a range. They behave same as pointers at the end they're used to point to some specific location of a sequence but they're slightly different as they're customizable and have a more strict interface than a primitive pointer. Ok so how iterators can be useful ?
+C++ iterators are a facility for traversing through a range. They behave same as pointers at the end they're used to point to a specific location of a sequence but they're slightly different as they're customizable and have a more strict interface than a primitive pointer. Ok so how iterators can be useful ?
 Consider copying N elements from a vector to another: 
 
-the old way
+the old way:
 ```cpp
 #include <iostream>
 #include <vector> 
@@ -34,7 +28,7 @@ int main() {
     }
 }
 ```
-vs
+vs range-for:
 ```cpp
 #include <iostream>
 #include <vector> 
@@ -54,7 +48,7 @@ but how ? C++11 introduced iterators and range-for (as `for(type identifier ':' 
 ```cpp
 for(int i: src)
 ```
-ok so let's explain what's actually is done here, basically the range-for will traverse the range provided by the vector using (begin(), end()) and assign the value pointed by the iterator at that location to `i` by calling `operator*`, ok hold up what are `begin, end, operator*` ? Don't worry everything will be detailed later. So this range-for can be simplified as:
+ok so let's explain what's actually is done here, basically the range-for will traverse through the range provided by the vector's iterator using begin(), end() and assign the value pointed by the iterator at that location to `i` by calling `operator*`, ok hold up what are `begin, end, operator*` ? Don't worry everything will be detailed later. So this range-for can be simplified as:
 ```cpp
 for(auto it = src.begin(); it != src.end(); ++it) {
     int i = *it;
@@ -77,20 +71,22 @@ iterator--: decrements the iterator.
 
 ### types of an iterator:
 there are 5 iterators in C++ defined by the standard as:
-- [input iterator](https://en.cppreference.com/w/cpp/named_req/InputIterator):
+- [input iterator](https://en.cppreference.com/w/cpp/named_req/InputIterator)(since C++11):
 input iterator is a single direction iterator and read only means you can only increment it and read from it. It's one of the simplest iterators. Usually used for reading from input streams like files in read only mode, stdin.
 
-- [output iterator](https://en.cppreference.com/w/cpp/named_req/OutputIterator):
+- [output iterator](https://en.cppreference.com/w/cpp/named_req/OutputIterator)(since C++11):
 same as input iterator, output iterator is a single direction iterator, but can only used for writing to a stream. 
 
-- [forward iterator](https://en.cppreference.com/w/cpp/named_req/ForwardIterator):
+- [forward iterator](https://en.cppreference.com/w/cpp/named_req/ForwardIterator)(since C++11):
 forward iterator is a single direction iterator that can be used for both reading and writing, usually used in containers like [std::forward_list](https://en.cppreference.com/w/cpp/container/forward_list). 
 
-- [bidirectional iterator](https://en.cppreference.com/w/cpp/named_req/BidirectionalIterator):
+- [bidirectional iterator](https://en.cppreference.com/w/cpp/named_req/BidirectionalIterator)(since C++11);
 bidirectional iterator is just a forward iterator that can be moved to both direction incrementing, decrementing 
 
-- [random access iterator](https://en.cppreference.com/w/cpp/named_req/RandomAccessIterator):
+- [random access iterator](https://en.cppreference.com/w/cpp/named_req/RandomAccessIterator)(since C++11):
 random access iterator is a bidirectional iterator that can be moved to any direction means if you want to access to the Nth element of a sequence you can just do `auto Nth_Value = container.begin() + N;` unlike previous iterators where you should increment N times. Random access iterator is the hardest and yet most powerful iterator since it supports all of the previously mentioned iterators. 
+- [contiguous iterator](https://en.cppreference.com/w/cpp/named_req/ContiguousIterator)(since C++20):
+contiguous iterator is a random access iterator where the elements it points to are contiguously ordered in the memory
 
 #### conclusion:
 In brief Random Access Iterator can be treated as a Bidirectional Iterator which itself can be treated as a Forward Iterator then input/output iterator.
@@ -114,7 +110,22 @@ int main() {
     
 }
 ```
-seems like just a RAI ? 
+RAI (Random Access Iterator):
+```cpp
+int main() {
+    std::vector<int> vec{6, 8, 5, 6};
+    auto first = vec.begin();
+    first++;
+    ++first;
+    first--;
+    --first;
+    use(*first);
+    use(first[N]);
+    first += N;
+    first -= N;
+}
+```
+
 ### writing your first iterator:
 let's start by implementing a simple forward iterator:
 layout of our iterator:
