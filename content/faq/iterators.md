@@ -1,5 +1,5 @@
 ---
-title: "Introduction to C++ 11 Iterators"
+title: "Introduction to C++ Iterators"
 date: 2021-03-26T16:37:10Z
 slug: "iterators"
 tags: ["c++", "c++-11"]
@@ -12,11 +12,13 @@ searchHidden: false
 
 
 # iterators:
-C++ iterators are a facility for traversing through a range just like in any programming language. They behave same as pointers as they're used to point to a specific location of a sequence but they're slightly different as iterators are customizable and have a more strict interface/rules to follow than a primitive pointer. In this article I'll give you a brief and clear explanation about iterators and how they works.
+C++ iterators are a facility for traversing through a range just like in any programming language. They behave same as pointers as they're used to point to a specific location of a sequence but they're slightly different as iterators are customizable and have a more strict interface than a primitive pointer. In this article I'll give you a brief and clear explanation about iterators and how they work.
 
 Ok so how iterators can be useful ?
-Consider copying N elements from a vector to another: 
 
+Consider these examples
+
+1. Copying N elements from a vector to another:
 the old way:
 ```cpp
 #include <iostream>
@@ -56,21 +58,38 @@ for(auto it = src.begin(); it != src.end(); ++it) {
     ...
 } 
 ```
-see [range-for](https://en.cppreference.com/w/cpp/language/range-for) for more detailed explanation.
+see [range-for](https://en.cppreference.com/w/cpp/language/range-for) for in-depth explanation.
 
-### interface of an iterator:
-begin: points to the beginning of a sequence.
+2. Creating a linked list:
+linked list isn't a contiguous sequence, so it's impossible to relay on pointers for iteration instead you should provide an iterator that performs the same arithmetic operations as a pointer would do.
+```cpp
+class linked_list_iterator {
+    T* ptr;
+    ...
+    operator++() {
+       // instead of incrementing `ptr` you simply do
+       ptr = ptr->next;
+    }
+    ...
+};
+```
 
-end: points to the end of a sequence.
+### interface of an iterator (i.e Bidirectional Iterator):
 
 *iterator: returns the stored value pointed by the iterator.
 
-iterator++: increments the iterator by 1
+iterator++, ++iterator: increments the pointer.
 
-iterator--: decrements the iterator. 
+iterator--, --iterator: decrements the pointers. 
+
+iterwtor !=/== iterator: compare the pointers held by both operands. Useful for indicating where a range starts and ends.
+
+#### note:
+An iterator itself mustn't have begin/end functions as it's container's responsibility to handle these functions.
 
 
 ### types of an iterator:
+
 there are 5 iterators in C++ defined by the standard as:
 - [input iterator](https://en.cppreference.com/w/cpp/named_req/InputIterator):
 input iterator is a single direction iterator and read only means you can only increment it and read from it. It's one of the simplest iterators. Usually used for reading from input streams like files in read only mode, stdin.
@@ -90,11 +109,11 @@ random access iterator is a bidirectional iterator that can be moved to any dire
 contiguous iterator is a random access iterator where the elements it points to are contiguously ordered in the memory
 
 #### conclusion:
-In brief Contiguous Iterator is a  Random Access Iterator which is a Bidirectional Iterator then Forward Iterator and input/output iterator.
+In brief Contiguous Iterator is a superset of a Random Access Iterator which is a superset of a Bidirectional Iterator a Forward Iterator and a input/output iterator.
 
 
 ### iterator vs pointer:
-As discussed earlier an iterator is just an abstraction of a pointer, but with more consistency (i.e we can't just use pointers for iterating over a linked list as it's not contiguous and lead to UB, but we instead create a custom iterator and move the current stored pointer to a node to the next node whenever moving in a direction).
+As discussed earlier an iterator is just an abstraction of a pointer, but with more consistency (i.e we can't just use pointers for iterating over a linked list as it's not contiguous and lead to UB, but we instead create a custom iterator and move the current stored pointer to some node to the next node if the location has changed).
 pointer:
 ```cpp
 int main() {
