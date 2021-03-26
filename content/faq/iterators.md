@@ -45,6 +45,8 @@ int main() {
     for(int i: src) {
         dest.push_back(i);
     }
+    // or even
+    std::copy(src.begin(), src.end(), std::back_inseter{dest});
 }
 ```
 as you can see the 2nd way is shorter to write and easier to understand. 
