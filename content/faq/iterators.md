@@ -1,4 +1,23 @@
-## iterators:
+---
+title: "Introduced to C++ 11 Iterators"
+date: 2021-03-26T16:37:10Z
+slug: "iterators";
+tags: ["c++", "c++-11"]
+draft: false
+disableShare: false
+disableHLJS: false
+searchHidden: false
+# cover:
+#     image: "<image path/url>" # image path/url
+#     alt: "<alt text>" # alt text
+#     caption: "<text>" # display caption under cover
+#     relative: false # when using page bundles set this to true
+#     hidden: true # only hide on current single page
+---
+
+
+
+# iterators:
 in C++ iterators are a facility for traversing through a range, like containers (std::vector, std::list ...), for better readability and control over the code.
 How iterators can approve my code and make it more consistent ? Consider copying N elements from a vector to another: 
 
