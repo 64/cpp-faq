@@ -1,8 +1,7 @@
 ---
 title: "What is 'Undefined Behaviour'?"
-date: 2021-03-23T02:26:05Z
 slug: "ub"
-tags: ["C", "C++"]
+tags: ["beginner"]
 draft: false
 disableShare: false
 disableHLJS: false
@@ -19,19 +18,22 @@ Undefined Behaviour (also known as **UB**) occurs when you violate certain langu
 int x;
 std::cout << x; // UB: x was used before being initialized
 
-int y = 0;
-std::cout << y; // OK
-```
-```cpp
-int arrayA[10];
-for(int x : arrayA)
-    std::cout << x << ' '; // UB: array elements are uninitialized
+int *y = nullptr;
+*y = 5; // UB: dereferencing null pointer
 
-int arrayB[10] = {};
-for(int x: arrayB)
-    std::cout << x << ' '; // OK
+int arrayA[10];
+for(int z : arrayA)
+    std::cout << x << ' '; // UB: array elements used when uninitialized
+
+int *w = new int;
+delete w;
+*w = 5; // UB: object used after being destroyed
 ``` 
 
 ## Avoiding UB
-Undefined behaviour can be difficult to diagnose. Always [compile with warnings enabled]({{< ref "faq/enable-warnings.md" >}}), but note that compilers can't detect all problems at compile time. Tools like [ASan](https://en.wikipedia.org/wiki/AddressSanitizer), [UBSAN](https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html) and [Valgrind](https://valgrind.org/docs/manual/quick-start.html#quick-start.mcrun) perform checks on your code at runtime and are good at catching invalid memory accesses, so are recommended for use during development.
+Undefined behaviour can be difficult to diagnose. Always [compile with warnings enabled]({{< ref "faq/enable-warnings.md" >}}), but note that compilers can't detect all problems at compile time. Tools like [ASan](https://en.wikipedia.org/wiki/AddressSanitizer), [UBSan](https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html) and [Valgrind](https://valgrind.org/docs/manual/quick-start.html#quick-start.mcrun) perform checks on your code at runtime and are good at catching invalid memory accesses, so are recommended for use during development.
 
+For `gcc` and `clang` users, we recommend using `-Wall -Wextra -g -fsanitize=address,undefined` in your compilation flags during development. This enables compiler warnings, ASan, UBSan (and debugging symbols for nicer sanitizer error messages).
+
+### See Also
+* https://en.cppreference.com/w/c/language/behavior
