@@ -78,7 +78,7 @@ iterator--: decrements the iterator.
 ### types of an iterator:
 there are 5 iterators in C++ defined by the standard as:
 - [input iterator](https://en.cppreference.com/w/cpp/named_req/InputIterator):
-input iterator is a single direction iterator and read only means you can only increment it and read from it. It's one of the simplest iterators. Usually used for reading from input streams like std::ifstream, std::cin. 
+input iterator is a single direction iterator and read only means you can only increment it and read from it. It's one of the simplest iterators. Usually used for reading from input streams like files in read only mode, stdin.
 
 - [output iterator](https://en.cppreference.com/w/cpp/named_req/OutputIterator):
 same as input iterator, output iterator is a single direction iterator, but can only used for writing to a stream. 
