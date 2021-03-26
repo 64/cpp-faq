@@ -89,7 +89,7 @@ random access iterator is a bidirectional iterator that can be moved to any dire
 contiguous iterator is a random access iterator where the elements it points to are contiguously ordered in the memory
 
 #### conclusion:
-In brief Random Access Iterator can be treated as a Bidirectional Iterator which itself can be treated as a Forward Iterator then input/output iterator.
+In brief Contiguous Iterator is a  Random Access Iterator which is a Bidirectional Iterator then Forward Iterator and input/output iterator.
 
 
 ### iterator vs pointer:
