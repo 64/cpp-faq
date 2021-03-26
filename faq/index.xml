@@ -5,47 +5,37 @@
     <link>https://64.github.io/cpp-faq/faq/</link>
     <description>Recent content in Faqs on C &amp; C&#43;&#43; FAQ</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 23 Mar 2021 02:26:05 +0000</lastBuildDate><atom:link href="https://64.github.io/cpp-faq/faq/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://64.github.io/cpp-faq/faq/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How do I enable compiler warnings?</title>
+      <link>https://64.github.io/cpp-faq/enable-warnings/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://64.github.io/cpp-faq/enable-warnings/</guid>
+      <description>For gcc and clang users: Add -Wall -Wextra to your compilation flags.
+Other useful options include:
+ -Werror: treats warnings as if they were errors -pedantic: generates warnings if you use any language extensions -Wno-x: disables warning x, e.g if the compiler gives you a -Wunused-variable warning, you can turn it off with -Wno-unused-variable  (Note that, contrary to what the name -Wall may imply, this does not enable all warnings, but it does enable most of the important ones.</description>
+    </item>
+    
     <item>
       <title>What is &#39;Undefined Behaviour&#39;?</title>
-      <link>https://64.github.io/cpp-faq/ub/</link>
-      <pubDate>Tue, 23 Mar 2021 02:26:05 +0000</pubDate>
+      <link>https://64.github.io/cpp-faq/undefined-behaviour/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://64.github.io/cpp-faq/ub/</guid>
-      <description>Undefined Behaviour (also known as UB) occurs when you violate certain language rules. These rules include (but are not limited to): dereferencing a nullptr, signed integer overflow, accessing through a dangling reference, or accessing through an unaligned pointer.
+      <guid>https://64.github.io/cpp-faq/undefined-behaviour/</guid>
+      <description>Undefined Behaviour (also known as UB) occurs when you violate certain language rules. These rules include (but are not limited to): dereferencing a null pointer, signed integer overflow, accessing through a dangling reference, or accessing through an unaligned pointer.
 When undefined behaviour occurs, the C and C++ standards do not place any restrictions on what your program might do. In other words, your program may crash, or continue execution, or call some seemingly unrelated piece of code, or print 42 and open xkcd in your web browser.</description>
     </item>
     
     <item>
-      <title>About this site</title>
-      <link>https://64.github.io/cpp-faq/about-this-site/</link>
-      <pubDate>Tue, 23 Mar 2021 02:16:33 +0000</pubDate>
-      
-      <guid>https://64.github.io/cpp-faq/about-this-site/</guid>
-      <description>TODO</description>
-    </item>
-    
-    <item>
-      <title>How do I enable compiler warnings?</title>
-      <link>https://64.github.io/cpp-faq/how-do-i-enable-compiler-warnings/</link>
-      <pubDate>Tue, 23 Mar 2021 01:56:40 +0000</pubDate>
-      
-      <guid>https://64.github.io/cpp-faq/how-do-i-enable-compiler-warnings/</guid>
-      <description>For gcc and clang users Add -Wall -Wextra to your compilation flags, enable -Werror so your compiler will treat warnings as errors, also you may need to enable -pedantic to disable gnu extensions
-(Note that, contrary to what the name -Wall may imply, this does not enable all warnings, but it does enable most of the important ones.)
-For Visual Studio users Unlike gcc and clang, Visual Studio does enable some warnings by default.</description>
-    </item>
-    
-    <item>
-      <title>Why using namespace std is considered bad practice?</title>
-      <link>https://64.github.io/cpp-faq/why-using-namespace-std-is-considered-bad-practice/</link>
+      <title>Why is `using namespace std` considered bad practice?</title>
+      <link>https://64.github.io/cpp-faq/using-namespace-std/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://64.github.io/cpp-faq/why-using-namespace-std-is-considered-bad-practice/</guid>
+      <guid>https://64.github.io/cpp-faq/using-namespace-std/</guid>
       <description>Consider this code:
-#include &amp;lt;iostream&amp;gt;#include &amp;lt;algorithm&amp;gt; using namespace std; int swap = 0; int main() { cout &amp;lt;&amp;lt; swap &amp;lt;&amp;lt; endl; // error: reference to &amp;#34;swap&amp;#34; is ambiguous  return 0; } There the compiler throws an error because swap is also a function inside the algorithm header. Compiler doesn&amp;rsquo;t know what to do in this case.
-So using namespace is considered a bad practice because makes your code less clear, and in the example leads to name collision.</description>
+#include &amp;lt;iostream&amp;gt;#include &amp;lt;algorithm&amp;gt; using namespace std; int swap = 0; int main() { cout &amp;lt;&amp;lt; swap &amp;lt;&amp;lt; endl; // ERROR: reference to &amp;#34;swap&amp;#34; is ambiguous } Here, the compiler throws an error because it doesn&amp;rsquo;t know whether you refer to your swap global variable, or the std::swap function inside the &amp;lt;algorithm&amp;gt; header.
+That is to say, using namespace is considered bad practice because it leads to name collisions, and it also makes your code less clear.</description>
     </item>
     
   </channel>

@@ -2,40 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://64.github.io/cpp-faq/tags/c/</loc>
-    <lastmod>2021-03-23T02:26:05+00:00</lastmod>
+    <loc>https://64.github.io/cpp-faq/meta/about/</loc>
+  </url><url>
+    <loc>https://64.github.io/cpp-faq/tags/beginner/</loc>
   </url><url>
     <loc>https://64.github.io/cpp-faq/</loc>
-    <lastmod>2021-03-23T02:26:05+00:00</lastmod>
-  </url><url>
-    <loc>https://64.github.io/cpp-faq/tags/c&#43;&#43;/</loc>
-    <lastmod>2021-03-23T02:26:05+00:00</lastmod>
-  </url><url>
-    <loc>https://64.github.io/cpp-faq/faq/</loc>
-    <lastmod>2021-03-23T02:26:05+00:00</lastmod>
-  </url><url>
-    <loc>https://64.github.io/cpp-faq/tags/</loc>
-    <lastmod>2021-03-23T02:26:05+00:00</lastmod>
-  </url><url>
-    <loc>https://64.github.io/cpp-faq/ub/</loc>
-    <lastmod>2021-03-23T02:26:05+00:00</lastmod>
-  </url><url>
-    <loc>https://64.github.io/cpp-faq/about-this-site/</loc>
-    <lastmod>2021-03-23T02:16:33+00:00</lastmod>
-  </url><url>
-    <loc>https://64.github.io/cpp-faq/tags/meta/</loc>
-    <lastmod>2021-03-23T02:16:33+00:00</lastmod>
-  </url><url>
-    <loc>https://64.github.io/cpp-faq/tags/dev-env/</loc>
-    <lastmod>2021-03-23T01:56:40+00:00</lastmod>
-  </url><url>
-    <loc>https://64.github.io/cpp-faq/how-do-i-enable-compiler-warnings/</loc>
-    <lastmod>2021-03-23T01:56:40+00:00</lastmod>
   </url><url>
     <loc>https://64.github.io/cpp-faq/categories/</loc>
   </url><url>
+    <loc>https://64.github.io/cpp-faq/tags/dev-env/</loc>
+  </url><url>
+    <loc>https://64.github.io/cpp-faq/faq/</loc>
+  </url><url>
+    <loc>https://64.github.io/cpp-faq/enable-warnings/</loc>
+  </url><url>
+    <loc>https://64.github.io/cpp-faq/meta/</loc>
+  </url><url>
+    <loc>https://64.github.io/cpp-faq/tags/meta/</loc>
+  </url><url>
     <loc>https://64.github.io/cpp-faq/search/</loc>
   </url><url>
-    <loc>https://64.github.io/cpp-faq/why-using-namespace-std-is-considered-bad-practice/</loc>
+    <loc>https://64.github.io/cpp-faq/tags/</loc>
+  </url><url>
+    <loc>https://64.github.io/cpp-faq/undefined-behaviour/</loc>
+  </url><url>
+    <loc>https://64.github.io/cpp-faq/using-namespace-std/</loc>
   </url>
 </urlset>
