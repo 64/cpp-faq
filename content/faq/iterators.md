@@ -1,5 +1,5 @@
 ---
-title: "Introduced to C++ 11 Iterators"
+title: "Introduction to C++ 11 Iterators"
 date: 2021-03-26T16:37:10Z
 slug: "iterators"
 tags: ["c++", "c++-11"]
