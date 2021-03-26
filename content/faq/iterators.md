@@ -46,7 +46,7 @@ int main() {
         dest.push_back(i);
     }
     // or even
-    std::copy(src.begin(), src.end(), std::back_inseter{dest});
+    std::copy(src.begin(), src.end(), std::back_inserter{dest});
 }
 ```
 as you can see the 2nd way is shorter to write and easier to understand.
@@ -96,9 +96,25 @@ random access iterator is a bidirectional iterator that can be moved to any dire
 In brief Random Access Iterator can be treated as a Bidirectional Iterator which itself can be treated as a Forward Iterator then input/output iterator.
 
 
-### iterators vs pointers:
-At the first glance iterator may seems like a pointer hence it has the same operations as a pointer in fact we can say that an iterator is just a form of a pointer, but with more consistency (i.e we can't just use pointers for iterating over a linked list as it's not contiguous and often lead to UB, but we instead create a custom iterator and move the current stored the node to the next node whenever moving in a direction). 
-
+### iterator vs pointer:
+As discussed earlier an iterator is just an abstraction of a pointer, but with more consistency (i.e we can't just use pointers for iterating over a linked list as it's not contiguous and lead to UB, but we instead create a custom iterator and move the current stored pointer to a node to the next node whenever moving in a direction).
+pointer:
+```cpp
+int main() {
+    int arr[] = {6, 8, 5, 6};
+    auto first = arr; // first points to the first element of arr: 6
+    first++; // can be incremented
+    ++first;
+    first--; // decremented
+    --first;
+    use(*first); // deferenceced
+    use(first[N]); // same as use(*(first + N))
+    first += N; // re-assigned 
+    first -= N;
+    
+}
+```
+seems like just a RAI ? 
 ### writing your first iterator:
 let's start by implementing a simple forward iterator:
 layout of our iterator:
