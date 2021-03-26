@@ -71,21 +71,21 @@ iterator--: decrements the iterator.
 
 ### types of an iterator:
 there are 5 iterators in C++ defined by the standard as:
-- [input iterator](https://en.cppreference.com/w/cpp/named_req/InputIterator)(since C++11):
+- [input iterator](https://en.cppreference.com/w/cpp/named_req/InputIterator):
 input iterator is a single direction iterator and read only means you can only increment it and read from it. It's one of the simplest iterators. Usually used for reading from input streams like files in read only mode, stdin.
 
-- [output iterator](https://en.cppreference.com/w/cpp/named_req/OutputIterator)(since C++11):
+- [output iterator](https://en.cppreference.com/w/cpp/named_req/OutputIterator):
 same as input iterator, output iterator is a single direction iterator, but can only used for writing to a stream. 
 
-- [forward iterator](https://en.cppreference.com/w/cpp/named_req/ForwardIterator)(since C++11):
+- [forward iterator](https://en.cppreference.com/w/cpp/named_req/ForwardIterator):
 forward iterator is a single direction iterator that can be used for both reading and writing, usually used in containers like [std::forward_list](https://en.cppreference.com/w/cpp/container/forward_list). 
 
-- [bidirectional iterator](https://en.cppreference.com/w/cpp/named_req/BidirectionalIterator)(since C++11);
+- [bidirectional iterator](https://en.cppreference.com/w/cpp/named_req/BidirectionalIterator):
 bidirectional iterator is just a forward iterator that can be moved to both direction incrementing, decrementing 
 
-- [random access iterator](https://en.cppreference.com/w/cpp/named_req/RandomAccessIterator)(since C++11):
+- [random access iterator](https://en.cppreference.com/w/cpp/named_req/RandomAccessIterator):
 random access iterator is a bidirectional iterator that can be moved to any direction means if you want to access to the Nth element of a sequence you can just do `auto Nth_Value = container.begin() + N;` unlike previous iterators where you should increment N times. Random access iterator is the hardest and yet most powerful iterator since it supports all of the previously mentioned iterators. 
-- [contiguous iterator](https://en.cppreference.com/w/cpp/named_req/ContiguousIterator)(since C++20):
+- [contiguous iterator (since C++20)](https://en.cppreference.com/w/cpp/named_req/ContiguousIterator):
 contiguous iterator is a random access iterator where the elements it points to are contiguously ordered in the memory
 
 #### conclusion:
