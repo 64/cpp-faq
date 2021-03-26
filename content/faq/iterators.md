@@ -47,7 +47,7 @@ as you can see the 2nd way is shorter to write and easier to understand.
 ```cpp
 for(int i: src)
 ```
-ok so let's explain what's actually is done here, basically the range-for will traverse through the range provided by the vector's iterator using begin(), end() and assign the value pointed by the iterator at that location to `i` by calling `operator*`, ok hold up what are `begin, end, operator*` ? Don't worry everything will be detailed later. So this range-for can be simplified as:
+ok so let's explain what's actually is done here, basically the range-for will traverse through the range provided by the vector's iterator using begin(), end() and assign the value pointed by the iterator at that location to `i` by calling `operator*`, so this range-for can be simplified as:
 ```cpp
 for(auto it = src.begin(); it != src.end(); ++it) {
     int i = *it;
