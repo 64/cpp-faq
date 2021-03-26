@@ -18,7 +18,7 @@ searchHidden: false
 
 
 # iterators:
-C++ iterators are a facility for traversing through a range, to improve readability and a better control over the code, they behave same as pointers at the end they're used to point to some specific location of a sequence but they're slightly different and of course better. Ok so how iterators can be useful ?
+C++ iterators are a facility for traversing through a range. They behave same as pointers at the end they're used to point to some specific location of a sequence but they're slightly different as they're customizable and have a more strict interface than a primitive pointer. Ok so how iterators can be useful ?
 Consider copying N elements from a vector to another: 
 
 the old way
