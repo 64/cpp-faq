@@ -51,10 +51,15 @@ as you can see the 2nd way is shorter to write and easier to understand.
 
 ### interface of an iterator:
 begin: points to the beginning of a sequence.
+
 end: points to the end of a sequence.
+
 *iterator: returns the stored value pointed by the iterator.
+
 iterator++: increments the iterator by 1
+
 iterator--: decrements the iterator. 
+
 
 ### types of an iterator:
 there are 5 iterators in C++ defined by the standard as:
