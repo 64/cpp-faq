@@ -18,8 +18,8 @@ searchHidden: false
 
 
 # iterators:
-C++ iterators are a facility for traversing through a range, to improve readability and a better control over the code.
-How iterators can approve my code and make it more consistent ? Consider copying N elements from a vector to another: 
+C++ iterators are a facility for traversing through a range, to improve readability and a better control over the code, they behave same as pointers at the end they're used to point to some specific position of a sequence but they're slightly different and of course better. Ok so how iterators can be useful ?
+Consider copying N elements from a vector to another: 
 
 the old way
 ```cpp
