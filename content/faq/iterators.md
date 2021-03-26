@@ -49,7 +49,13 @@ int main() {
     std::copy(src.begin(), src.end(), std::back_inseter{dest});
 }
 ```
-as you can see the 2nd way is shorter to write and easier to understand. 
+as you can see the 2nd way is shorter to write and easier to understand.
+but how ? C++11 introduced iterators and range-for, so what the 2nd code does ?
+```cpp
+for(int i: src)
+```
+ok so let's explain what's actually is done here, basically the range-for will traverse the range provided by the vector using (begin(), end()) and assign the value pointed by the iterator at that location to `i` by calling `operator*` don't worry everything will be detailed later
+
 
 ### interface of an iterator:
 begin: points to the beginning of a sequence.
