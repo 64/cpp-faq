@@ -97,7 +97,7 @@ In brief Random Access Iterator can be treated as a Bidirectional Iterator which
 
 
 ### iterators vs pointers:
-At the first glance iterator may seems like a pointer hence it has the same operations as a pointer in fact we can say that an iterator is just a from of a pointer, but with more control over what's happening (i.e we can't just use pointers for iterating over a linked list as it's not contiguous and often lead to UB, but we instead create a custom iterator and move the current stored the node to the next node whenever moving in a direction). 
+At the first glance iterator may seems like a pointer hence it has the same operations as a pointer in fact we can say that an iterator is just a form of a pointer, but with more consistency (i.e we can't just use pointers for iterating over a linked list as it's not contiguous and often lead to UB, but we instead create a custom iterator and move the current stored the node to the next node whenever moving in a direction). 
 
 ### writing your first iterator:
 let's start by implementing a simple forward iterator:
