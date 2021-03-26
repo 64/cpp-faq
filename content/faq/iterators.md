@@ -50,7 +50,7 @@ int main() {
 }
 ```
 as you can see the 2nd way is shorter to write and easier to understand.
-but how ? C++11 introduced iterators and range-for (as `for(type identifier ':' range)`, so what the 2nd code does ?
+but how ? C++11 introduced iterators and range-for (as `for(type identifier ':' range)`), so what the 2nd code does ?
 ```cpp
 for(int i: src)
 ```
