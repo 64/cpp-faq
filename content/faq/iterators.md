@@ -18,7 +18,7 @@ searchHidden: false
 
 
 # iterators:
-in C++ iterators are a facility for traversing through a range, like containers (std::vector, std::list ...), for better readability and control over the code.
+C++ iterators are a facility for traversing through a range, to improve readability and a better control over the code.
 How iterators can approve my code and make it more consistent ? Consider copying N elements from a vector to another: 
 
 the old way
