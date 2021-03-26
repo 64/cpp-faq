@@ -93,7 +93,7 @@ bidirectional iterator is just a forward iterator that can be moved to both dire
 random access iterator is a bidirectional iterator that can be moved to any direction means if you want to access to the Nth element of a sequence you can just do `auto Nth_Value = container.begin() + N;` unlike previous iterators where you should increment N times. Random access iterator is the hardest and yet most powerful iterator since it supports all of the previously mentioned iterators. 
 
 #### conclusion:
-now we know that Random Access Iterator can be treated as a Bidirectional Iterator which itself can be treated as a Forward Iterator then input/output iterator.
+In brief Random Access Iterator can be treated as a Bidirectional Iterator which itself can be treated as a Forward Iterator then input/output iterator.
 
 
 ### iterators vs pointers:
