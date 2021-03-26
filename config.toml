@@ -13,7 +13,7 @@ minifyOutput = true
 home = ["HTML", "RSS", "JSON"]
 
 [permalinks]
-faq = "/:slug" # So that we have /faq-entry-name instead of /faq/faq-entry-name
+faq = "/:filename" # So that we have /faq-entry-name instead of /faq/faq-entry-name
 
 [params]
 env = "production"

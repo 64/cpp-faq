@@ -1,7 +1,6 @@
 ---
-title: "Why using namespace std is considered bad practice?"
-date: 23 / 03 / 2021
-tags: ["c++"]
+title: "Why is `using namespace std` considered bad practice?"
+tags: ["beginner"]
 draft: false
 disableShare: false
 disableHLJS: false
@@ -11,7 +10,6 @@ searchHidden: false
 Consider this code:
 
 ```cpp
-
 #include <iostream>
 #include <algorithm>
 
@@ -20,32 +18,26 @@ using namespace std;
 int swap = 0;
 
 int main() {
-
-	cout << swap << endl; // error: reference to "swap" is ambiguous
-
-	return 0;
+	cout << swap << endl; // ERROR: reference to "swap" is ambiguous
 }
-
 ```
 
-There the compiler throws an error because swap is also a function inside the algorithm header. Compiler doesn't know what to do in this case.
+Here, the compiler throws an error because it doesn't know whether you refer to your `swap` global variable, or the `std::swap` function inside the `<algorithm>` header.
 
-So ```using namespace``` is considered a bad practice because makes your code less clear, and in the example leads to name collision. 
-If you really want to avoid writing  ```std::```, you can use a **using-declaration** inside a local scope:
+That is to say, **`using namespace` is considered bad practice because it leads to name collisions**, and it also makes your code less clear.
+If you *absolutely must*, you can use a **using-declaration** inside a local scope:
 
 ```cpp
-
 #include <iostream>
 
 int main() {
+	using std::cout; // This only affects the current function
 
-	using std::cout; // This will be valid only inside this function
-	
 	cout << "Hello" <<'\n';
-
 }
-
 ```
 
-Generally, is always better to specify the namespace.
-If you want to know something more about this topic, I recommend watching this video: https://www.youtube.com/watch?v=4NYC-VU-svE
+Generally speaking, it is better to specify the namespace.
+
+### See also
+* https://isocpp.org/wiki/faq/coding-standards#using-namespace-std

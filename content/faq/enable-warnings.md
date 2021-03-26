@@ -1,13 +1,11 @@
 ---
 title: "How do I enable compiler warnings?"
-date: 2021-03-23T01:56:40Z
-tags: ["C", "C++", "dev-env"]
+tags: ["beginner", "dev-env"]
 draft: false
 disableShare: false
 disableHLJS: false
 searchHidden: false
 ---
-
 
 ### For `gcc` and `clang` users:
 **Add `-Wall -Wextra` to your compilation flags.**

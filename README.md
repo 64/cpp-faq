@@ -12,7 +12,7 @@ First [install `hugo`](https://gohugo.io/getting-started/installing#readout).
 
 Please read [`STYLE.md`](STYLE.md) to familiarize yourself with the style and tone in which articles should be written.
 
-See [Projects](https://github.com/64/cpp-faq/projects/1) for a list of suggested topics to write about.
+See [Projects/FAQ Articles](https://github.com/64/cpp-faq/projects/1) for a list of suggested topics to write about.
 
 To create new articles - run `hugo new faq/my-faq-post.md`. This generates a file named `content/faq/my-faq-post.md` with the appropriate template. Add the content (in markdown format) below the bottom `---`. Hugo will be able to locate your content without any additional work.
 
