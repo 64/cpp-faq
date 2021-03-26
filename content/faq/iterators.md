@@ -18,7 +18,7 @@ Ok so how iterators can be useful ?
 
 Consider these examples
 
-1. Copying N elements from a vector to another:
+##### Copying N elements from a vector to another:
 the old way:
 ```cpp
 #include <iostream>
@@ -60,7 +60,7 @@ for(auto it = src.begin(); it != src.end(); ++it) {
 ```
 see [range-for](https://en.cppreference.com/w/cpp/language/range-for) for in-depth explanation.
 
-2. Creating a linked list:
+##### Creating a linked list:
 linked list isn't a contiguous sequence, so it's impossible to relay on pointers for iteration instead you should provide an iterator that performs the same arithmetic operations as a pointer would do.
 ```cpp
 class linked_list_iterator {
