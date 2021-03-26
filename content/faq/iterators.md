@@ -54,7 +54,7 @@ but how ? C++11 introduced iterators and range-for (as `for(type identifier ':' 
 ```cpp
 for(int i: src)
 ```
-ok so let's explain what's actually is done here, basically the range-for will traverse the range provided by the vector using (begin(), end()) and assign the value pointed by the iterator at that location to `i` by calling `operator*`, ok hold up what are `begin, end, operator*` ? Don't worry everything will be detailed later this can be simplified as:
+ok so let's explain what's actually is done here, basically the range-for will traverse the range provided by the vector using (begin(), end()) and assign the value pointed by the iterator at that location to `i` by calling `operator*`, ok hold up what are `begin, end, operator*` ? Don't worry everything will be detailed later. This range-for can be simplified as:
 ```cpp
 for(auto it = src.begin(); it != src.end(); ++it) 
 ```
