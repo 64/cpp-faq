@@ -2,17 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://64.github.io/cpp-faq/</loc>
+    <lastmod>2021-03-26T16:37:10+00:00</lastmod>
+  </url><url>
+    <loc>https://64.github.io/cpp-faq/tags/c&#43;&#43;/</loc>
+    <lastmod>2021-03-26T16:37:10+00:00</lastmod>
+  </url><url>
+    <loc>https://64.github.io/cpp-faq/tags/c&#43;&#43;-11/</loc>
+    <lastmod>2021-03-26T16:37:10+00:00</lastmod>
+  </url><url>
+    <loc>https://64.github.io/cpp-faq/faq/</loc>
+    <lastmod>2021-03-26T16:37:10+00:00</lastmod>
+  </url><url>
+    <loc>https://64.github.io/cpp-faq/tags/</loc>
+    <lastmod>2021-03-26T16:37:10+00:00</lastmod>
+  </url><url>
+    <loc>https://64.github.io/cpp-faq/iterators/</loc>
+    <lastmod>2021-03-26T16:37:10+00:00</lastmod>
+  </url><url>
     <loc>https://64.github.io/cpp-faq/meta/about/</loc>
   </url><url>
     <loc>https://64.github.io/cpp-faq/tags/beginner/</loc>
   </url><url>
-    <loc>https://64.github.io/cpp-faq/</loc>
-  </url><url>
     <loc>https://64.github.io/cpp-faq/categories/</loc>
   </url><url>
     <loc>https://64.github.io/cpp-faq/tags/dev-env/</loc>
-  </url><url>
-    <loc>https://64.github.io/cpp-faq/faq/</loc>
   </url><url>
     <loc>https://64.github.io/cpp-faq/enable-warnings/</loc>
   </url><url>
@@ -21,8 +35,6 @@
     <loc>https://64.github.io/cpp-faq/tags/meta/</loc>
   </url><url>
     <loc>https://64.github.io/cpp-faq/search/</loc>
-  </url><url>
-    <loc>https://64.github.io/cpp-faq/tags/</loc>
   </url><url>
     <loc>https://64.github.io/cpp-faq/undefined-behaviour/</loc>
   </url><url>

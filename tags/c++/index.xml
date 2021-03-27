@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>c&#43;&#43; on C &amp; C&#43;&#43; FAQ</title>
+    <link>https://64.github.io/cpp-faq/tags/c&#43;&#43;/</link>
+    <description>Recent content in c&#43;&#43; on C &amp; C&#43;&#43; FAQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 26 Mar 2021 16:37:10 +0000</lastBuildDate><atom:link href="https://64.github.io/cpp-faq/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>what&#39;s an &#39;Iterator&#39;</title>
+      <link>https://64.github.io/cpp-faq/iterators/</link>
+      <pubDate>Fri, 26 Mar 2021 16:37:10 +0000</pubDate>
+      
+      <guid>https://64.github.io/cpp-faq/iterators/</guid>
+      <description>iterators: C++ iterators are a facility for traversing through a range just like in any programming language. They behave same as pointers as they&amp;rsquo;re used to point to a specific location of a sequence but they&amp;rsquo;re slightly different as iterators are customizable and have a more strict interface than a primitive pointer. In this article I&amp;rsquo;ll give you a brief and clear explanation about iterators and how they work.
+Ok so how iterators can be useful ?</description>
+    </item>
+    
+  </channel>
+</rss>
