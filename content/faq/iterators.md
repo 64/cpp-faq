@@ -1,5 +1,5 @@
 ---
-title: "Introduction to C++ Iterators"
+title: "what's an 'Iterator'"
 date: 2021-03-26T16:37:10Z
 slug: "iterators"
 tags: ["c++", "c++-11"]
@@ -16,63 +16,33 @@ C++ iterators are a facility for traversing through a range just like in any pro
 
 Ok so how iterators can be useful ?
 
-Consider these examples
+Consider these examples:
 
-##### Copying N elements from a vector to another:
-the old way:
-```cpp
-#include <iostream>
-#include <vector> 
+##### Noncontiguous containers (std::list):
 
-int main() {
-    std::vector<int> src{5, 8, 9, 3, 1};
-    std::vector<int> dest{};
-    for(std::size_t i = 0; i < src.size(); i++) {
-        dest.push_back(src[i]);
-    }
-}
-```
-vs range-for:
-```cpp
-#include <iostream>
-#include <vector> 
-
-int main() {
-    std::vector<int> src{5, 8, 9, 3, 1};
-    std::vector<int> dest{};
-    for(int i: src) {
-        dest.push_back(i);
-    }
-    // or even
-    std::copy(src.begin(), src.end(), std::back_inserter{dest});
-}
-```
-as you can see the 2nd way is shorter to write and easier to understand.
-```cpp
-for(int i: src)
-```
-basically this range-for will traverse through the range provided by the vector's iterator using begin(), end() and assign the value pointed by the iterator at that location to `i` by calling `operator*`, so this range-for can be simplified as:
-```cpp
-for(auto it = src.begin(); it != src.end(); ++it) {
-    int i = *it;
-    ...
-} 
-```
-see [range-for](https://en.cppreference.com/w/cpp/language/range-for) for in-depth explanation.
-
-##### Creating a linked list:
 linked list isn't a contiguous sequence, so it's impossible to relay on pointers for iteration instead you should provide an iterator that performs the same arithmetic operations as a pointer would do.
 ```cpp
-class linked_list_iterator {
-    T* ptr;
-    ...
-    operator++() {
-       // instead of incrementing `ptr` you simply do
-       ptr = ptr->next;
+int main() {
+    std::list<int> mlist{7, 4, 5, 8, 9};
+    for(auto it = mlist.begin(); it != mlist.end(); ++it) {
+        std::cout << *it << '\n';
     }
-    ...
-};
+}
 ```
+
+#### Algorithms
+
+the 'algorithm' has a niche collection of useful algorithms, however these algorithms doesn't apply on all of the iterator categories i.e (std::sort):
+```cpp
+int main() {
+    std::list<int> my_list{6, 5, 4, 3, 8, 9};
+    std::vector<int> my_vec{6, 5, 4, 3, 8, 9};
+    std::sort(my_vec.begin(), my_vec.end());
+    std::sort(my_list.begin(), my_list.end());
+}
+```
+the above code works fine for [std::vector](https://en.cppreference.com/w/cpp/container/vector) [std::list](https://en.cppreference.com/w/cpp/container/list) that's due to [std::sort](https://en.cppreference.com/w/cpp/algorithm/sort)'s iterator requirements, since it uses specific arithmetic operations that are supported by certain iterator (Random Access Iterator).
+
 
 ### interface of an iterator (i.e Bidirectional Iterator):
 
@@ -88,7 +58,7 @@ iterwtor !=/== iterator: compare the pointers held by both operands. Useful for 
 An iterator itself mustn't have begin/end functions as it's container's responsibility to handle these functions.
 
 
-### types of an iterator:
+### categories of an iterator:
 
 there are 5 iterators in C++ defined by the standard as:
 - [input iterator](https://en.cppreference.com/w/cpp/named_req/InputIterator):
@@ -117,6 +87,7 @@ As discussed earlier an iterator is just an abstraction of a pointer, but with m
 pointer:
 ```cpp
 int main() {
+    const int N = 2;
     int arr[] = {6, 8, 5, 6};
     auto first = arr; // first points to the first element of arr: 6
     first++; // can be incremented
@@ -125,7 +96,7 @@ int main() {
     --first;
     use(*first); // deferenceced
     use(first[N]); // same as use(*(first + N))
-    first += N; // re-assigned 
+    first += N; // re-assigned to point to another location  
     first -= N;
     
 }
@@ -133,6 +104,7 @@ int main() {
 RAI (Random Access Iterator):
 ```cpp
 int main() {
+    const int N = 2;
     std::vector<int> vec{6, 8, 5, 6};
     auto first = vec.begin();
     first++;
@@ -145,4 +117,5 @@ int main() {
     first -= N;
 }
 ```
+
 
