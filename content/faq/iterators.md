@@ -32,7 +32,7 @@ int main() {
 
 #### Algorithms
 
-the 'algorithm' has a niche collection of useful algorithms, however these algorithms doesn't apply on all of the iterator categories i.e (std::sort):
+the 'algorithm' header has a niche collection of useful algorithms, however these algorithms doesn't apply on all of the iterator categories i.e (std::sort):
 ```cpp
 int main() {
     std::list<int> my_list{6, 5, 4, 3, 8, 9};
