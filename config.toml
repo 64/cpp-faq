@@ -1,5 +1,5 @@
 baseURL = "https://64.github.io/cpp-faq"
-title = "C & C++ FAQ"
+title = "C++ FAQ"
 languageCode = "en-us"
 theme = "PaperMod"
 enableInlineShortcodes = true
@@ -16,8 +16,9 @@ home = ["HTML", "RSS", "JSON"]
 faq = "/:filename" # So that we have /faq-entry-name instead of /faq/faq-entry-name
 
 [params]
+mainSections = ["faq", "meta"]
 env = "production"
-title = "C & C++ FAQ"
+title = "C++ FAQ"
 showtoc = false
 tocopen = false
 hidemeta = false
@@ -25,7 +26,7 @@ comments = false
 socialIcons = [{ name = "github", url = "https://github.com/64/cpp-faq" }]
 
 [params.homeInfoParams]
-Title = "C & C++ FAQ"
+Title = "C++ FAQ"
 Content = "Frequently Asked Questions for the C and C++ programming languages."
 
 [params.fuseOpts]

@@ -1,6 +1,6 @@
-# C & C++ FAQ
+# C++ FAQ
 
-An open source FAQ for C and C++, available at (temporary URL) [https://64.github.io/cpp-faq](https://64.github.io/cpp-faq).
+An open source FAQ for C++, available at (temporary URL) [https://64.github.io/cpp-faq](https://64.github.io/cpp-faq).
 
 The content of this repository (excluding software) is licensed under the [CC BY-SA 4.0 license](LICENSE.txt). The software itself is licensed under the [MIT license](LICENSE.txt). By contributing to this project, you agree to have your work licensed under these agreements.
 

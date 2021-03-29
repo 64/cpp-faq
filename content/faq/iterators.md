@@ -1,22 +1,26 @@
 ---
-title: "what's an 'Iterator'"
+title: "What is an iterator?"
 date: 2021-03-26T16:37:10Z
-slug: "iterators"
-tags: ["c++", "c++-11"]
+tags: ["c++", "c++11"]
 draft: false
 disableShare: false
 disableHLJS: false
 searchHidden: false
 ---
 
+Iterators provide a unified API for accessing different containers. On the surface, they work similar to pointers:
 
+```cpp
+std::vector<int> vec { 1, 2, 3 };
 
-# iterators:
-C++ iterators are a facility for traversing through a range just like in any programming language. They behave same as pointers as they're used to point to a specific location of a sequence but they're slightly different as iterators are customizable and have a more strict interface than a primitive pointer. In this article I'll give you a brief and clear explanation about iterators and how they work.
+auto it = vec.begin(); // gives us an iterator which points to '1'
+it++; // start now points to '2'
+it++; // start now points to '3'
 
-Ok so how iterators can be useful ?
+std::cout << *it << '\n'; // prints '3'
+```
 
-Consider these examples:
+TODO
 
 ##### Noncontiguous containers (std::list):
 
@@ -117,5 +121,3 @@ int main() {
     first -= N;
 }
 ```
-
-
