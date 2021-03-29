@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>c&#43;&#43; on C&#43;&#43; FAQ</title>
-    <link>https://64.github.io/cpp-faq/tags/c&#43;&#43;/</link>
-    <description>Recent content in c&#43;&#43; on C&#43;&#43; FAQ</description>
+    <title>c&#43;&#43;11 on C&#43;&#43; FAQ</title>
+    <link>https://64.github.io/cpp-faq/tags/c&#43;&#43;11/</link>
+    <description>Recent content in c&#43;&#43;11 on C&#43;&#43; FAQ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 26 Mar 2021 16:37:10 +0000</lastBuildDate><atom:link href="https://64.github.io/cpp-faq/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 Mar 2021 16:37:10 +0000</lastBuildDate><atom:link href="https://64.github.io/cpp-faq/tags/c++11/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>What is an iterator?</title>
       <link>https://64.github.io/cpp-faq/iterators/</link>

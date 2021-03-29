@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>C &amp; C&#43;&#43; FAQ</title>
+    <title>C&#43;&#43; FAQ</title>
     <link>https://64.github.io/cpp-faq/</link>
-    <description>Recent content on C &amp; C&#43;&#43; FAQ</description>
+    <description>Recent content on C&#43;&#43; FAQ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 26 Mar 2021 16:37:10 +0000</lastBuildDate><atom:link href="https://64.github.io/cpp-faq/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>what&#39;s an &#39;Iterator&#39;</title>
+      <title>What is an iterator?</title>
       <link>https://64.github.io/cpp-faq/iterators/</link>
       <pubDate>Fri, 26 Mar 2021 16:37:10 +0000</pubDate>
       
       <guid>https://64.github.io/cpp-faq/iterators/</guid>
-      <description>iterators: C++ iterators are a facility for traversing through a range just like in any programming language. They behave same as pointers as they&amp;rsquo;re used to point to a specific location of a sequence but they&amp;rsquo;re slightly different as iterators are customizable and have a more strict interface than a primitive pointer. In this article I&amp;rsquo;ll give you a brief and clear explanation about iterators and how they work.
-Ok so how iterators can be useful ?</description>
+      <description>Iterators provide a unified API for accessing different containers. On the surface, they work similar to pointers:
+std::vector&amp;lt;int&amp;gt; vec { 1, 2, 3 }; auto it = vec.begin(); // gives us an iterator which points to &amp;#39;1&amp;#39; it++; // start now points to &amp;#39;2&amp;#39; it++; // start now points to &amp;#39;3&amp;#39;  std::cout &amp;lt;&amp;lt; *it &amp;lt;&amp;lt; &amp;#39;\n&amp;#39;; // prints &amp;#39;3&amp;#39; TODO
+Noncontiguous containers (std::list): linked list isn&amp;rsquo;t a contiguous sequence, so it&amp;rsquo;s impossible to relay on pointers for iteration instead you should provide an iterator that performs the same arithmetic operations as a pointer would do.</description>
     </item>
     
     <item>

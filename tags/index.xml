@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on C &amp; C&#43;&#43; FAQ</title>
+    <title>Tags on C&#43;&#43; FAQ</title>
     <link>https://64.github.io/cpp-faq/tags/</link>
-    <description>Recent content in Tags on C &amp; C&#43;&#43; FAQ</description>
+    <description>Recent content in Tags on C&#43;&#43; FAQ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 26 Mar 2021 16:37:10 +0000</lastBuildDate><atom:link href="https://64.github.io/cpp-faq/tags/index.xml" rel="self" type="application/rss+xml" />
@@ -17,11 +17,11 @@
     </item>
     
     <item>
-      <title>c&#43;&#43;-11</title>
-      <link>https://64.github.io/cpp-faq/tags/c&#43;&#43;-11/</link>
+      <title>c&#43;&#43;11</title>
+      <link>https://64.github.io/cpp-faq/tags/c&#43;&#43;11/</link>
       <pubDate>Fri, 26 Mar 2021 16:37:10 +0000</pubDate>
       
-      <guid>https://64.github.io/cpp-faq/tags/c&#43;&#43;-11/</guid>
+      <guid>https://64.github.io/cpp-faq/tags/c&#43;&#43;11/</guid>
       <description></description>
     </item>
     

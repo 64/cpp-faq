@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Meta on C &amp; C&#43;&#43; FAQ</title>
+    <title>Meta on C&#43;&#43; FAQ</title>
     <link>https://64.github.io/cpp-faq/meta/</link>
-    <description>Recent content in Meta on C &amp; C&#43;&#43; FAQ</description>
+    <description>Recent content in Meta on C&#43;&#43; FAQ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://64.github.io/cpp-faq/meta/index.xml" rel="self" type="application/rss+xml" />
     <item>
