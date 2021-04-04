@@ -56,7 +56,7 @@ iterator++, ++iterator: increments the pointer.
 
 iterator--, --iterator: decrements the pointers. 
 
-iterwtor !=/== iterator: compare the pointers held by both operands. Useful for indicating where a range starts and ends.
+iterator !=/== iterator: compare the pointers held by both operands. Useful for indicating where a range starts and ends.
 
 #### note:
 An iterator itself mustn't have begin/end functions as it's container's responsibility to handle these functions.
