@@ -24,7 +24,7 @@ int *y = nullptr;
 
 int arrayA[10];
 for(int z : arrayA)
-    std::cout << x << ' '; // UB: array elements used when uninitialized
+    std::cout << z << ' '; // UB: array elements used when uninitialized
 
 int *w = new int;
 delete w;
