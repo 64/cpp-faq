@@ -27,12 +27,12 @@ The following things are unspecified (not exhaustive):
 - the initial value of storage allocated by `new` (often zero when getting new memory from the OS)
 - evaluation order of operands of some operators (for `a + b`, `b` might be evaluated first)
 - amount of time it takes for a thread to make progress (but eventual progress is guaranteed)
-- underlying type of `enum E {A};` (usually `int`)
+- whether references require any storage (they usually do, just like pointers)
 
-Unspecified behavior can be as predictable as *"we probably know what happens"*, such as `int` being used for the last
-example.
+Unspecified behavior can be as predictable as *"we probably know what happens"*, such as a reference requiring some
+storage when used as a class member.
 However, it can also be nonsensical to define, such as the initial value of storage allocated by `new`.
-The `new` operator usually uses `std::malloc` to allocate storage, but the initial value of its storage is
+The `new` operator usually uses `std::malloc` to allocate storage, but the initial value of `std::malloc`'s storage is
 indeterminate.
 
 From the C++20 standard:
