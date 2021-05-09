@@ -19,5 +19,5 @@ To create new articles - run `hugo new faq/my-faq-post.md`. This generates a fil
 ## Building
 
 1. [Install `hugo`](https://gohugo.io/getting-started/installing#readout).
-2. Run `git submodules update --init` to download the theme if you haven't already
+2. Run `git submodule update --init` to download the theme if you haven't already
 3. Run `hugo server -D` then navigate to [http://localhost:1313/cpp-faq/](http://localhost:1313/cpp-faq/) in your browser.
