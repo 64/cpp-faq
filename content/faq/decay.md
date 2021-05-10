@@ -7,37 +7,34 @@ disableHLJS: false
 searchHidden: false
 ---
 
-Decay is a set of conversion rules applied to function parameters which are passed by value.
-The [`std::decay`](https://en.cppreference.com/w/cpp/types/decay) type trait lists all these conversions and can be
-used to simulate them.
-It is called "decay" because in all cases, some type information is lost, such as the size of an array.
+When we call functions in C++, our arguments may need to undergo type conversions.
+For example, we can call a function that takes an `int` with a `const int` argument, which copies its value.
+For parameters which are passed by value, some of these conversions rules are called *decay*.
+They are called *decay* because in most cases, some type information is lost, such as the size of an array or the
+`const` qualifier in our example.
 
 ## Array-to-Pointer Conversion
 
 A commonly known form of decay is array-to-pointer conversion:
 ```cpp
 // We seemingly accept an array by value as our parameter:
-int buggy_sum(int ints[8]) {
-    int sum = 0;
-    // warning: 'sizeof' on array function parameter 'ints'
-    //          will return size of 'int *' [-Wsizeof-array-argument]
-    int limit = sizeof(ints) / sizeof(ints[0]);
-    // This will most likely perform only 2 iterations, not 8, like we wanted.
-    for (int i = 0; i < limit; ++i) {
-        sum += ints[i];
-    }
-    return sum;
+void print_size(char arr[128]) {
+    // warning: 'sizeof' on array function parameter 'arr'
+    //          will return size of 'char *' [-Wsizeof-array-argument]
+    std::cout << sizeof(arr) << '\n';
 }
 ```
-We have specified that our first `buggy_sum` should accept an array with size `8` of `int` in our first function
-parameter.
-However, arrays can not be passed by value and instead decay to pointers.
+**Sample output:** `8`
+
+We have attempted to specify that our `print_size` should accept an array with size `128` of `char` by value as its
+function parameter.
+However, arrays cannot be passed by value and instead decay to pointers.
 So from the compiler's point of view, our function signature is equal to:
 ```cpp
-int buggy_sum(int *ints);
+void print_size(char *arr);
 ```
 Using `sizeof` with arrays that have decayed to a pointer is a common source of bugs, as in the above example, where
-we take obtain the size of a pointer, which is less than the size of the entire array.
+we obtain the size of a pointer, which is less than the size of the entire array.
 Thankfully, GCC and clang warn us about this.
 
 ## Function-to-Pointer conversion
@@ -61,7 +58,7 @@ The danger of misuse is not as great here; decay simply gives us a nicer syntax 
 ## Discarding `const`/`volatile` qualifiers and removing references
 
 This form of decay is something that you have likely understood already by intuition.
-When accept a type `T` as a parameter to our function by value, we don't care whether the arguments were `const`,
+When we accept a type `T` as a parameter to our function by value, we don't care whether the arguments were `const`,
 `volatile`, references, other values, etc. 
 Inside of the function, we are simply using `T`.
 
@@ -91,8 +88,9 @@ int main() {
 
 ## Using `std::decay`
 
-[`std::decay`](https://en.cppreference.com/w/cpp/types/decay) and its convenience type alias `std::decay_t` simulate the
-effect of decay.
+The documentation of the [`std::decay`](https://en.cppreference.com/w/cpp/types/decay) type trait lists all these
+*decay* conversions.
+`std::decay` can be used to simulate them and there is also a templated type alias `std::decay_t` for convenience.
 Here are a few examples:
 ```cpp
 // no decay
