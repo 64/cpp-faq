@@ -48,6 +48,17 @@ Other useful options include:
     </item>
     
     <item>
+      <title>What are &#39;Unspecified&#39; and &#39;Implementation-Defined&#39; behavior?</title>
+      <link>https://64.github.io/cpp-faq/unspecified-impldefined/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://64.github.io/cpp-faq/unspecified-impldefined/</guid>
+      <description>Unlike undefined behavior, unspecified and implementation-defined behavior occur all the time in a normal C++ program. Making use of unspecified/implementation-defined behavior is unavoidable, but relying on specific behavior can be fatal.
+The C++ standard does not specify what happens in every scenario, so the implementation has the freedom to implement behavior, constants, macro definitions, and more in multiple possible ways.
+Unspecified Behavior unspecified by the standard is not necessary to document, but still valid.</description>
+    </item>
+    
+    <item>
       <title>What is &#39;Undefined Behaviour&#39;?</title>
       <link>https://64.github.io/cpp-faq/undefined-behaviour/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
