@@ -40,6 +40,15 @@ When undefined behaviour occurs, the C and C++ standards do not place any restri
     </item>
     
     <item>
+      <title>What is decay and array-to-pointer conversion?</title>
+      <link>https://64.github.io/cpp-faq/decay/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://64.github.io/cpp-faq/decay/</guid>
+      <description>When we call functions in C++, our arguments may need to undergo type conversions. For example, we can call a function that takes an int with a const int argument, which copies its value. For parameters which are passed by value, some of these conversions rules are called decay. They are called decay because in most cases, some type information is lost, such as the size of an array or the const qualifier in our example.</description>
+    </item>
+    
+    <item>
       <title>Why is `using namespace std` considered bad practice?</title>
       <link>https://64.github.io/cpp-faq/using-namespace-std/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
