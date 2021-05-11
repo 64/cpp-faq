@@ -9,8 +9,6 @@ searchHidden: false
 
 Fixed-width integers are integral types with a fixed number of bits. The C++ standard only specifies a minimum byte count for types such as `short`, `int` and `long`. Fixed-width integers guarantee a specific size, but their use can have an impact on portability, since they are not supported by all platforms.
 
-Fixed-width integers are commonly implemented as `typedef`'s, meaning they are generally aliases for built-in integral types that satisfy the "X bits" condition.
-
 ## Fixed-width integer types
 These can be used by including `<cstdint>`. The `intX_t` types are signed integers with exactly `X` bits. `uintX_t` types are the same, but unsigned.
 - `std::int8_t` / `std::uint8_t` (1 byte)
