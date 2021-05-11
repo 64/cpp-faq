@@ -22,17 +22,9 @@ These can be used by including `<cstdint>`. The `intX_t` types are signed intege
 ### The more portable alternative
 To optimize integral types for faster access times and to ensure portability with more exotic architectures, the following types allow the compiler to choose a suitable integer size, while also ensuring a minimum number of bits.
 
-Types that optimize for memory (smallest integral type with at least X bits):
-- `std::int_least8_t` / `std::uint_least8_t`
-- `std::int_least16_t` / `std::uint_least16_t`
-- `std::int_least32_t` / `std::uint_least32_t`
-- `std::int_least64_t` / `std::uint_least64_t`
+For every `std::(u)intX_t` type there is a `std::(u)int_leastX_t` that represents the smallest integral type with at least X bits. These optimize for memory.
 
-Types that optimize for speed (fastest integral type with at least X bits):
-- `std::int_fast8_t` / `std::uint_fast8_t`
-- `std::int_fast16_t` / `std::uint_fast16_t`
-- `std::int_fast32_t` / `std::uint_fast32_t`
-- `std::int_fast64_t` / `std::uint_fast64_t`
+Likewise, there are types that optimize for speed: `std::(u)int_fastX_t` (the fastest integral type with at least X bits).
 
 ## Fixed-width integer range
 Unsigned integers with X bits range from 0 to 2<sup>X</sup> - 1. Signed integers with X bits typically range from -2<sup>X-1</sup> to 2<sup>X-1</sup> - 1, assuming two's complement representation.
