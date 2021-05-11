@@ -28,14 +28,6 @@ Likewise, there are types that optimize for speed: `std::(u)int_fastX_t` (the fa
 
 ## Fixed-width integer range
 Unsigned integers with X bits range from 0 to 2<sup>X</sup> - 1. Signed integers with X bits typically range from -2<sup>X-1</sup> to 2<sup>X-1</sup> - 1, assuming two's complement representation.
-- `std::int8_t` &#8594; \[-128 -- 127]
-- `std::int16_t` &#8594; \[-32,768 -- 32,767]
-- `std::int32_t` &#8594; \[-2,147,483,648 -- 2,147,483,647]
-- `std::int64_t` &#8594; \[-9,223,372,036,854,775,808 -- 9,223,372,036,854,775,807]
-- `std::uint8_t` &#8594; \[0 -- 255]
-- `std::uint16_t` &#8594; \[0 -- 65,535]
-- `std::uint32_t` &#8594; \[0 -- 4,294,967,295]
-- `std::uint64_t` &#8594; \[0 -- 18,446,744,073,709,551,616]
 
 Accurate, platform-specific ranges can also be found in `<cstdint>`:
 - `INTX_MIN` / `INTX_MAX` (minimum and maximum values for `std::intX_t` and `std::uintX_t`)
