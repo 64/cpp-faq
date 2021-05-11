@@ -7,9 +7,9 @@ disableHLJS: false
 searchHidden: false
 ---
 
-Fixed-width integers are integral types with a fixed number of bits. The C++ standard only defines a minimum byte count for types like `short`, `int` and `long` (however, it does specify that `char` is always 1 byte wide). Fixed-width integers guarantee a specific size, but usage may affect portability, since they are not available on all platforms.
+Fixed-width integers are integral types with a fixed number of bits. The C++ standard only specifies a minimum byte count for types such as `short`, `int` and `long` (though it does state that `char` is always 1 byte wide). Fixed-width integers guarantee a specific size, but their use can have an impact on portability, since they are not supported by all platforms.
 
-Fixed-width integers are typically implemented as `typedef`'s, which means they are usually aliases for built-in integral types that satisfy the "X bits" condition.
+Fixed-width integers are commonly implemented as `typedef`'s, meaning they are generally aliases for built-in integral types that satisfy the "X bits" condition.
 
 ## Fixed-width integer types
 These can be used by including `<cstdint>`. The `intX_t` types are signed integers with exactly `X` bits. `uintX_t` types are the same, but unsigned.
@@ -37,7 +37,7 @@ Types that optimize for speed (fastest integral type with at least X bits):
 - `std::int_fast64_t` / `std::uint_fast64_t`
 
 ## Fixed-width integer range
-Unsigned integers with X bits range from 0 (inclusive) to 2<sup>X</sup> - 1. Signed integers with X bits typically range from -2<sup>X-1</sup> to 2<sup>X-1</sup> - 1, assuming two's complement representation.
+Unsigned integers with X bits range from 0 to 2<sup>X</sup> - 1. Signed integers with X bits typically range from -2<sup>X-1</sup> to 2<sup>X-1</sup> - 1, assuming two's complement representation.
 - `std::int8_t` &#8594; \[-128 -- 127]
 - `std::int16_t` &#8594; \[-32,768 -- 32,767]
 - `std::int32_t` &#8594; \[-2,147,483,648 -- 2,147,483,647]
