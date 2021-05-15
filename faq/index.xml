@@ -51,6 +51,17 @@ When undefined behaviour occurs, the C and C++ standards do not place any restri
     </item>
     
     <item>
+      <title>What is a &#39;Member Initalizer List&#39; and why should I use it?</title>
+      <link>https://64.github.io/cpp-faq/member-initializer-list/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://64.github.io/cpp-faq/member-initializer-list/</guid>
+      <description>Constructors in C++ are used to initialize the data members of a class. First, it&amp;rsquo;s important to understand the terminology:
+struct wrapper { int value; wrapper(int v) : value{v} { } }; Our class wrapper has a constructor, consisting of four parts:
+ the class name wrapper the parameter list int v in parentheses the member initializer list value{v}, separated by a : from the parameter list the constructor body {}, which is empty in this case  In most other languages that have classes and constructors, the initialization simply takes place in the constructor body.</description>
+    </item>
+    
+    <item>
       <title>What is decay and array-to-pointer conversion?</title>
       <link>https://64.github.io/cpp-faq/decay/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
