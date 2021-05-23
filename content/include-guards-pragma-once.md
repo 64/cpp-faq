@@ -17,63 +17,63 @@ The preprocessor directive `#include` effectively copies the named header into o
 If we `#include` a header file more than once, this will result in redefinitions and possibly compiler errors.
 Consider this example:
 ```cpp
-// mymath.hpp
+// point.hpp
 
-inline int sqr(int x) {
-    return x * x;
-}
+struct point {
+    int x, y;
+};
 ```
 ```cpp
 // main.cpp
 
-#include "mymath.hpp"
-#include "mymath.hpp"
+#include "point.hpp"
+#include "point.hpp"
 #include <iostream>
 
 int main() {
-    int x;
-    std::cin >> x;
-    std::cout << sqr(x) << '\n';
+    point p;
+    std::cin >> p.x >> p.y;
+    std::cout << p.x << ' ' << p.y << '\n';
 }
 ```
-This code does not compile, because we have included `mymath.hpp` twice.
+This code does not compile, because we have included `point.hpp` twice.
 After these two includes are processed by the preprocessor, `main.cpp` (ignoring comments) will be the following:
 ```cpp
-inline int sqr(int x) {
-    return x * x;
-}
-inline int sqr(int x) {
-    return x * x;
-}
+struct point {
+    int x, y;
+};
+struct point {
+    int x, y;
+};
 #include <iostream>
 
 int main() {
-    int x;
-    std::cin >> x;
-    std::cout << sqr(x) << '\n';
+    point p;
+    std::cin >> p.x >> p.y;
+    std::cout << p.x << ' ' << p.y << '\n';
 }
 ```
 The program is ill-formed and we get a compiler error:
 ```txt
-<source>:4:12: error: redefinition of 'sqr'
-inline int sqr(int x) {
-           ^
-<source>:1:12: note: previous definition is here
-inline int sqr(int x) {
-           ^
+<source>:4:8: error: redefinition of 'point'
+struct point {
+       ^
+<source>:1:8: note: previous definition is here
+struct point {
+       ^
 ```
 At this point you might think: *"Okay then just don't include it twice and the problem is solved."*.
 But including headers multiple times is not always easy to avoid.
-We could have two more header files `vectormath.hpp` and `extramath.hpp`, both of which `#include "mymath.hpp"`.
+We could have two more header files `pointmath.hpp` and `pointlist.hpp`, both of which `#include "point.hpp"`.
 The include-tree would look as follows:
 ```txt
 main.cpp
-  └─ vectormath.hpp
-       └─ mymath.hpp
-  └─ extramath.hpp
-       └─ mymath.hpp
+  └─ pointmath.hpp
+       └─ point.hpp
+  └─ pointlist.hpp
+       └─ point.hpp
 ```
-`main.cpp` indirectly includes `mymath.hpp` twice.
+`main.cpp` indirectly includes `point.hpp` twice.
 And this is by no means unusual.
 Smaller standard library headers such as `<utility>` or `<new>` are included by many other headers like `<vector>`, so
 each source file may have many copies of `<new>`.
@@ -82,58 +82,58 @@ each source file may have many copies of `<new>`.
 
 Include guards are put around the entirety of the header file:
 ```cpp
-// mymath.hpp
-#ifndef MYPROJECT_MYMATH_HPP_GUARD
-#define MYPROJECT_MYMATH_HPP_GUARD
-inline int sqr(int x) {
-    return x * x;
-}
+// point.hpp
+#ifndef MYPROJECT_POINT_HPP_GUARD
+#define MYPROJECT_POINT_HPP_GUARD
+struct point {
+    int x, y;
+};
 #endif
 ```
-This idiom works by letting the preprocessor skip the entirety of the header file if `MYPROJECT_MYMATH_HPP_GUARD` has
+This idiom works by letting the preprocessor skip the entirety of the header file if `MYPROJECT_POINT_HPP_GUARD` has
 already been defined.
-Only the first time we include the header file will `MYPROJECT_MYMATH_HPP_GUARD` be undefined.
+Only the first time we include the header file, will `MYPROJECT_POINT_HPP_GUARD` be undefined.
 We `#define` this macro inside of the `#ifndef` block, so all subsequent copies of the header will not be processed.
 Here is how this works if we process the first two includes in `main.cpp`:
 ```cpp
-#ifndef MYPROJECT_MYMATH_HPP_GUARD // not defined yet, so we enter the ifndef-block
-#define MYPROJECT_MYMATH_HPP_GUARD // we define the guard
-inline int sqr(int x) {
-    return x * x;
-}
-#endif                             // we exit the block
-#ifndef MYPROJECT_MYMATH_HPP_GUARD // the guard has already been defined => skip
-#define MYPROJECT_MYMATH_HPP_GUARD // this is not processed
-inline int sqr(int x) {
-    return x * x;
-}
-#endif                             // we stop skipping code here
+#ifndef MYPROJECT_POINT_HPP_GUARD // not defined yet, so we enter the ifndef-block
+#define MYPROJECT_POINT_HPP_GUARD // we define the guard
+struct point {
+    int x, y;
+};
+#endif                            // we exit the ifndef-block
+#ifndef MYPROJECT_POINT_HPP_GUARD // the guard has already been defined => skip
+#define MYPROJECT_POINT_HPP_GUARD // this is not processed
+struct point {
+    int x, y;
+};
+#endif                            // we stop skipping code here
 #include <iostream>
 
 int main() {
-    int x;
-    std::cin >> x;
-    std::cout << sqr(x) << '\n';
+    point p;
+    std::cin >> p.x >> p.y;
+    std::cout << p.x << ' ' << p.y << '\n';
 }
 ```
 After processing the `#ifndef` blocks, the code will effectively look like this:
 ```cpp
-#define MYPROJECT_MYMATH_HPP_GUARD
-inline int sqr(int x) {
-    return x * x;
-}
+#define MYPROJECT_POINT_HPP_GUARD
+struct point {
+    int x, y;
+};
 #include <iostream>
 
 int main() {
-    int x;
-    std::cin >> x;
-    std::cout << sqr(x) << '\n';
+    point p;
+    std::cin >> p.x >> p.y;
+    std::cout << p.x << ' ' << p.y << '\n';
 }
 ```
-We could now include our `mymath.hpp` header as many times as we want in as many headers as we want without worrying
+We could now include our `point.hpp` header as many times as we want in as many headers as we want without worrying
 about redefining our functions and receiving compiler errors.
 
-Note: `MYPROJECT_MYMATH_HPP_GUARD` is an arbitrary definition, we could name it something else too.
+Note: `MYPROJECT_POINT_HPP_GUARD` is an arbitrary definition, we could name it something else too.
 But the name should be long and unique so we don't accidentally use the same guard twice.
 
 ## Solution B: #pragma once
@@ -145,16 +145,19 @@ We can use it like this:
 ```cpp
 // mymath.hpp
 #pragma once
-inline int sqr(int x) {
-    return x * x;
-}
+struct point {
+    int x, y;
+};
 ```
 At first glance, this is much more elegant than include guards and we could just use `#pragma once` in all cases.
 However, as already mentioned, `#pragma` directives are not part of the C or C++ standard, so the behavior is dependent
 on the compiler.
-One commonly stated advantage of `#pragma once` is that it can be faster, since the preprocessor doesn't need to read
-the entire file to find a matching `#endif` for the `#ifndef` directive.
+
+One alleged advantage of `#pragma once` is that
+[it can be faster](https://web.archive.org/web/20080930061318/http://www.gamesfromwithin.com/articles/0501/000067.html),
+since the preprocessor doesn't need to read the entire file to find a matching `#endif` for the `#ifndef` directive.
 The file contents can be skipped at an earlier stage.
+However, these claims are hard to reproduce with modern compilers and practical examples.
 
 It is worth noting that identifying whether a file is included multiple times is not a trival problem.
 In modern file systems, many symbolic links or hardlinks can lead to the same file.
@@ -166,12 +169,12 @@ An example where `#pragma once` fails can be seen here:
 ```cpp
 // a.hpp
 #pragma once
-struct Foo {};
+struct foo {};
 ```
 ```cpp
 // b.hpp
 #pragma once
-struct Foo {};
+struct foo {};
 ```
 ```cpp
 // main.cpp
@@ -182,13 +185,13 @@ namespace b {
 #include "b.hpp"
 }
 int main() {
-  b::Foo x;
+  b::foo x;
 }
 ```
 We get a compiler error:
 ```txt
-main.cpp:8:3: error: ‘Foo’ is not a member of ´b´
-   b::Foo x;
+main.cpp:8:3: error: foo is not a member of ´b´
+   b::foo x;
    ^~~
 ```
 The contents of `a.hpp` and `b.hpp` are completely identical (ignoring the comments at the top).
@@ -203,9 +206,9 @@ use both in our file:
 #pragma once
 #ifndef MYPROJECT_MYMATH_HPP_GUARD
 #define MYPROJECT_MYMATH_HPP_GUARD
-inline int sqr(int x) {
-    return x * x;
-}
+struct point {
+    int x, y;
+};
 #endif
 ```
 
