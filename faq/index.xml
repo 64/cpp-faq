@@ -30,6 +30,16 @@ Other useful options include:
     </item>
     
     <item>
+      <title>What are &#39;Include Guards&#39; and `#pragma once`?</title>
+      <link>https://64.github.io/cpp-faq/include-guards-pragma-once/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://64.github.io/cpp-faq/include-guards-pragma-once/</guid>
+      <description>Include guards, or sometimes called macro guards, header guards, or file guards are a common C/C++ idiom that allows including a header file multiple times safely. The non-standard preprocessor directive #pragma once is an almost equivalent alternative to this idiom.
+The Problem The preprocessor directive #include effectively copies the named header into our source file. If we #include a header file more than once, this will result in redefinitions and possibly compiler errors.</description>
+    </item>
+    
+    <item>
       <title>What are &#39;Unspecified&#39; and &#39;Implementation-Defined&#39; behavior?</title>
       <link>https://64.github.io/cpp-faq/unspecified-impldefined/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
