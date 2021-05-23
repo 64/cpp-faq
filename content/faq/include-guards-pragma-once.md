@@ -197,15 +197,26 @@ main.cpp:8:3: error: foo is not a member of ´b´
 The contents of `a.hpp` and `b.hpp` are completely identical (ignoring the comments at the top).
 When we attempt to `#include "b.hpp"`, the preprocessor will falsely believe that `b.hpp` has already been included,
 because it is identical to `a.hpp`.
-
 Arguably, this is an unusual example and including inside of a `namespace` is considered bad practice by many.
-To get the reliablity of include guards and also the alleged performance benefits of `#pragma once`, we could simply
-use both in our file:
+However, it shows that `#pragma once` is not quite as reliable as include guards.
+
+## Conclusion
+
+Include guards are a tried and tested, fully standardized, and efficient idiom which allows including a header file
+multiple times.
+Headers should be wrapped in include guards, ideally right when creating the file.
+Many IDEs can be configured so that they automatically add include guards when you create a new header file.
+
+`#pragma once` is a viable, but non-standard alternative for simple projects and will work most of the time, but
+it can produce cryptic and very hard-to-track errors.
+If you do measure a significant difference in compile times and want to use `#pragma once` anyways, you can use both
+include guards and `#pragma once`.
+Because include guards are unique for each file, the previously shown error would have been prevented:
 ```cpp
-// mymath.hpp
+// point.hpp
 #pragma once
-#ifndef MYPROJECT_MYMATH_HPP_GUARD
-#define MYPROJECT_MYMATH_HPP_GUARD
+#ifndef MYPROJECT_POINT_HPP_GUARD
+#define MYPROJECT_POINT_HPP_GUARD
 struct point {
     int x, y;
 };
