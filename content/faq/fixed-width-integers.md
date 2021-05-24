@@ -34,6 +34,10 @@ Accurate, platform-specific ranges can also be found in `<cstdint>`:
 - `INT_LEASTX_MIN` / `INT_LEASTX_MAX` (minimum and maximum values for `std::int_leastX_t` and `std::uint_leastX_t`)
 - `INT_FASTX_MIN` / `INT_FASTX_MAX` (minimum and maximum values for `std::int_fastX_t` and `std::uint_fastX_t`)
 
+In C++, the standardized way of getting the limits of various numeric types is the class template `std::numeric_limits` defined in `<limits>`:
+- `std::numeric_limits<T>.min()` - minimum value for an integer of type T
+- `std::numeric_limits<T>.max()` - maximum value for an integer of type T
+
 ## Example
 
 ```cpp
@@ -67,3 +71,4 @@ The `std::uint16_t` variable is 2 bytes wide, as expected. The compiler decided 
 
 ### See Also
 * https://en.cppreference.com/w/cpp/types/integer
+* https://en.cppreference.com/w/cpp/types/numeric_limits
