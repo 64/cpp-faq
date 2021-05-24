@@ -12,7 +12,7 @@ Fixed-width integers are integral types with a fixed number of bits. The C++ sta
 ## Fixed-width integer types
 These can be used by including `<cstdint>`. The `intX_t` types are signed integers with exactly `X` bits. `uintX_t` types are the same, but unsigned.
 - `std::int8_t` / `std::uint8_t` (1 byte)
-  - **Note:** These are treated as signed/unsigned characters on most systems. When printing variables of this type, they might show up as their ASCII equivalent.
+  - **Note:** These are treated as characters on most systems. When printing variables of this type, they might show up as their ASCII equivalent.
 - `std::int16_t` / `std::uint16_t` (2 bytes)
 - `std::int32_t` / `std::uint32_t` (4 bytes)
 - `std::int64_t` / `std::uint64_t` (8 bytes)
