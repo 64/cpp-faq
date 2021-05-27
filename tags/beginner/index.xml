@@ -39,6 +39,16 @@ Unspecified Behavior unspecified by the standard is not necessary to document, b
     </item>
     
     <item>
+      <title>What are fixed-width integers?</title>
+      <link>https://64.github.io/cpp-faq/fixed-width-integers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://64.github.io/cpp-faq/fixed-width-integers/</guid>
+      <description>Fixed-width integers are integral types with a fixed number of bits. The C++ standard only specifies a minimum byte count for types such as short, int and long. Fixed-width integers guarantee a specific size, but their use can have an impact on portability, since they are not supported by all platforms.
+Fixed-width integer types These can be used by including &amp;lt;cstdint&amp;gt;. The intX_t types are signed integers with exactly X bits.</description>
+    </item>
+    
+    <item>
       <title>What is &#39;Undefined Behaviour&#39;?</title>
       <link>https://64.github.io/cpp-faq/undefined-behaviour/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
