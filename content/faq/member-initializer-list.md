@@ -72,7 +72,7 @@ then reassign it to another value.
 
 ## The Right Way: Using a Member Initializer List
 
-To initialize our members, we should isntaed use a member initializer list and leave the constructor body empty:
+To initialize our members, we should instead use a member initializer list and leave the constructor body empty:
 ```cpp
 struct const_point {
     const int x, y;
