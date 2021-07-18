@@ -45,9 +45,11 @@ int myfunc2 (int arr[]) {/* some body*/}
 int myfunc3 (int arr[50]) {/* some body*/}
 ```
 
-In all the above declarations, when a call to any of the functions is made with an array as argument, only a pointer to its first arguement is passed. This may also have been clear to you after reading the decay faq page but it was worth mentioning here.
+In all the above declarations, when a call to any of the functions is made with an array as argument, only a pointer to its first arguement is passed. 
+This may also have been clear to you after reading the decay faq page but it was worth mentioning here. Another thing to be noted here is that no size information is
+actually passed to the function even though speicifed in example 3.
 
-The standard (C11) enforces all compilers to treat "array of type" to be adjusted to "qualified pointer to type".
+The standard enforces all compilers to treat "array of type" to be adjusted to "qualified pointer to type".
 
 [Standard Citation](http://port70.net/~nsz/c/c11/n1570.html/full#6.7.6.3p7)
 
@@ -149,8 +151,10 @@ This method isn't very feasible as it:
 - copying of a lot of variables
 - generally slower
 
-[comp.lang faq on arrays](http://c-faq.com/aryptr/index.html)
 
-[Why Global variables aren't always feasible](https://www.tutorialspoint.com/why-are-global-variables-bad-in-c-cplusplus)
+### External Resources
+- [comp.lang faq on arrays](http://c-faq.com/aryptr/index.html)
 
-[Price of dynamic memory allocation](https://johnysswlab.com/the-price-of-dynamic-memory-allocation/)
+- [Why Global variables aren't always feasible](https://www.tutorialspoint.com/why-are-global-variables-bad-in-c-cplusplus)
+
+- [Price of dynamic memory allocation](https://johnysswlab.com/the-price-of-dynamic-memory-allocation/)
