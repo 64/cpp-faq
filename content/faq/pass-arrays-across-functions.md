@@ -6,7 +6,10 @@ disableShare: false
 disableHLJS: false
 searchHidden: false
 ---
-Passing arrays to a function is a bit different than to passing non-array values to a function in a function call. This involves a concept called decay or array-to-pointer convesion, you should read about [decay and array-to-pointer conversion](https://64.github.io/cpp-faq/decay/). After reading this you'd be wondering if my arrays decay to a pointer to the first element, then how do I pass the array? Before answeing that you should learn about a few cases where an array will decay into a pointer or is a pointer in the following conditions:
+Passing arrays to a function is a bit different than to passing structs or primitive values to a function via a function call. 
+This involves a concept called decay or array-to-pointer convesion, you should read about [decay and array-to-pointer conversion](https://64.github.io/cpp-faq/decay/).
+ After reading this you'd be wondering if my arrays decay to a pointer to the first element, then how do I pass the array? Before answeing that you should learn about a few cases
+ where an array will decay into a pointer or is a pointer in the following conditions:
 
 - An array name in an expression is a pointer
 - function parameters
@@ -147,5 +150,7 @@ This method isn't very feasible as it:
 - generally slower
 
 [comp.lang faq on arrays](http://c-faq.com/aryptr/index.html)
+
 [Why Global variables aren't always feasible](https://www.tutorialspoint.com/why-are-global-variables-bad-in-c-cplusplus)
+
 [Price of dynamic memory allocation](https://johnysswlab.com/the-price-of-dynamic-memory-allocation/)
