@@ -1,6 +1,6 @@
 ---
 title: "Pass Arrays Across Functions"
-tags: [""]
+tags: ["faq"]
 draft: false
 disableShare: false
 disableHLJS: false
@@ -86,7 +86,7 @@ int main() {
 /* Set all elements to zero */
 	char *p = arr;
 	for(int i=0; i<maxlen; i++){
-		*arr++ = 0;
+		*p++ = 0;
 	}
 ```
 Any of the above stated way is fine and works the same in terms of efficieny/performance, the notational difference is quite obvious.
@@ -133,6 +133,9 @@ void makearray(){
 ```
 
 ## Read More
+A few details have not been discussed due to the limitations of this article answering a faq rather 
+an in depth article on arrays and pointers and their distinction. We recommend that you read further about this, a good
+book recommendation would be **Expert Programming in C by Peter Van Der Linden**.
 There are other methods that can be used such as global arrays, declaring structs.
 
 Declaring a user defined type using struct keyword which stores some array and then declaring a variable for it 
